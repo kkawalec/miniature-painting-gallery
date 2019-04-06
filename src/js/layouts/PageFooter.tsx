@@ -7,7 +7,7 @@ export default class PageFooter extends React.PureComponent {
   public render(): JSX.Element {
     return (
       <footer className="footer">
-      <AppBar position="static">
+      <AppBar position="static" color="secondary">
         <Toolbar style={{ alignItems: 'center', justifyContent: 'flex-end' }}>
           <Typography variant="caption">Developed by Karolina Modes AedLabs 2019</Typography>
         </Toolbar>
