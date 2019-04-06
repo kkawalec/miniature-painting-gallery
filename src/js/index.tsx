@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 import { Provider } from 'react-redux';
+import { configureAnchors } from 'react-scrollable-anchor';
 
 import history from 'store/history';
 import Router from './router';
@@ -11,9 +12,8 @@ import '../scss/index.scss';
 
 const env = process.env.NODE_ENV || 'development';
 
-/*
- * TODO setup app language
- */
+// configure scrolling
+configureAnchors({ offset: -100, scrollDuration: 200 });
 
 const localAppRouter = (
   <AppContainer>

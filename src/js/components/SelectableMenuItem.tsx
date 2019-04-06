@@ -8,6 +8,7 @@ interface ISelectableMenuItemProps {
   value: string;
   selectedValue: string;
   onChange: (value: string) => void;
+  img: string;
 }
 
 export default class MuiThemeMenuItem extends PureComponent<ISelectableMenuItemProps, {}> {
@@ -17,7 +18,7 @@ export default class MuiThemeMenuItem extends PureComponent<ISelectableMenuItemP
   }
 
   public render(): JSX.Element {
-    const { value, selectedValue } = this.props;
+    const { value, selectedValue, img } = this.props;
     const icon = selectedValue === value
       ? <Done /> : null;
 
@@ -26,7 +27,9 @@ export default class MuiThemeMenuItem extends PureComponent<ISelectableMenuItemP
          { icon && <ListItemIcon >
             {icon}
          </ListItemIcon> }
-          <ListItemText inset primary={value} />
+         <ListItemText inset>
+         <img src={img} alt={value} style={{ width: 30, height:'auto' }}/>
+         </ListItemText>
       </MenuItem>
     );
   }
