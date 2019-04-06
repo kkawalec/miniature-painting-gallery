@@ -16,11 +16,12 @@ const styles = {
     justifyContent: 'center',
   },
   appBar: {
-    marginBottom: 16,
+    marginBottom: 516,
   },
   headerImg: {
-    height: 500,
-    width: 'auto',
+    height: 'auto',
+    width: '100%',
+    maxHeight: 500,
     position: 'absolute' as any,
     top: 0,
   },
@@ -44,8 +45,9 @@ interface IPageHeaderState {
 }
 
 const links = [
-  { to: '#author', label: <Translate value="author.label" />, icon: null },
+  { to: '#about', label: <Translate value="about.label" />, icon: null },
   { to: '#gallery', label: <Translate value="gallery.label" />, icon: null },
+  { to: '#author', label: <Translate value="author.label" />, icon: null },
   { to: '#pricing', label: <Translate value="pricing.label" />, icon: null },
   { to: '#contact', label: <Translate value="contact.label" />, icon: null },
 ];

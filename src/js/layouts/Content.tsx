@@ -3,6 +3,7 @@ import React, { lazy, Suspense } from 'react';
 
 import SimpleLoader from 'components/SimpleLoader';
 
+const About = lazy(() => import(/* webpackChunkName: "aboutPage" */ 'views/About'));
 const Author = lazy(() => import(/* webpackChunkName: "authorPage" */ 'views/Author'));
 const Gallery = lazy(() => import(/* webpackChunkName: "galleryPage" */ 'views/Gallery'));
 const Pricing = lazy(() => import(/* webpackChunkName: "pricingPage" */ 'views/Pricing'));
@@ -13,16 +14,19 @@ export default class Content extends React.PureComponent<{}, {}> {
     return (
       <Suspense fallback={SimpleLoader}>
         <Grid item xs={12}>
+          <About />
+        </Grid>
+        <Grid item xs={12}>
           <Gallery />
         </Grid>
         <Grid item xs={12}>
-        <Author />
+          <Author />
         </Grid>
         <Grid item xs={12}>
-        <Pricing />
+          <Pricing />
         </Grid>
         <Grid item xs={12}>
-        <Contact />
+          <Contact />
         </Grid>
       </Suspense>
     );
