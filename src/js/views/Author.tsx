@@ -27,7 +27,7 @@ class Author extends React.Component<IAuthorProps, {}> {
     const { classes } = this.props;
     return (
       <ScrollableAnchor id="author">
-        <Grid container   justify="center"  alignItems="center">
+        <Grid container justify="center" alignItems="center">
           <Grid item xs={12} sm={2}>
             <Avatar alt="Remy Sharp" src={img1} className={classes.avatar} />
           </Grid>
@@ -36,7 +36,7 @@ class Author extends React.Component<IAuthorProps, {}> {
               <Translate value="author.name" />
             </Typography>
             <Typography variant="subtitle1">
-              <Translate value="author.content" />
+              <Translate value="author.content" className="font-courgette" />
             </Typography>
           </Grid>
         </Grid>

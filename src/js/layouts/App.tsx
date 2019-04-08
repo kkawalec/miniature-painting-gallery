@@ -5,6 +5,7 @@ import Grid from '@material-ui/core/Grid';
 import { createMuiTheme, MuiThemeProvider, withStyles } from '@material-ui/core/styles';
 
 import Loader from 'components/SimpleLoader';
+import CookieAlert from 'layouts/components/CookieAlert';
 import Content from 'layouts/Content';
 import IState from 'store/interfaces/IState';
 import theme from 'utils/mui/theme.json';
@@ -28,19 +29,24 @@ class App extends React.Component<IAppProps, {}> {
     const { classes } = this.props;
     return (
       <MuiThemeProvider theme={createMuiTheme(theme)}>
-        <Suspense fallback={Loader}>
+        {/* <Suspense fallback={Loader}> */}
           <React.Fragment>
             <div className="main-content">
+            <Suspense fallback={Loader}>
               <PageHeader />
+              </Suspense>
                 <div style={{ padding: 30 }}>
                 <Grid container className={classes.root} spacing={16}>
                   <Content />
                 </Grid>
                 </div>
               </div>
-            <PageFooter />
+              <Suspense fallback={Loader}>
+                <PageFooter />
+              </Suspense>
+              <CookieAlert/>
           </React.Fragment>
-        </Suspense>
+        {/* </Suspense> */}
       </MuiThemeProvider>
     );
   }

@@ -42,10 +42,29 @@ export default {
       },
     },
     contact: {
-      label: 'Contact',
+      title: 'Contact',
+      comment: 'You can contact us with anything related to our Products. We\'ll get in touch with you as soon as possible.',
+      form: {
+        name: {
+          label: 'Name',
+        },
+        email: {
+          label: 'Email',
+        },
+        phone: {
+          label: 'Phone',
+        },
+        message: {
+          label: 'Message',
+        },
+      },
     },
   },
   pl: {
+    about: {
+      label: 'Malowanie',
+      content: 'This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn\'t scroll to get here. Add a button if you want the user to see more.',
+    },
     author: {
       label: 'Autor',
       name: 'Karolina Modes',
@@ -84,11 +103,22 @@ export default {
       },
     },
     contact: {
-      label: 'Kontakt',
-    },
-    about: {
-      label: 'Malowanie',
-      content: 'This is the paragraph where you can write more details about your product. Keep you user engaged by providing meaningful information. Remember that by this time, the user is curious, otherwise he wouldn\'t scroll to get here. Add a button if you want the user to see more.',
+      title: 'Send us a message',
+      comment: 'You can contact us with anything related to our Products. We\'ll get in touch with you as soon as possible.',
+      form: {
+        name: {
+          label: 'Name',
+        },
+        email: {
+          label: 'Email',
+        },
+        phone: {
+          label: 'Phone',
+        },
+        message: {
+          label: 'Message',
+        },
+      },
     },
   },
 };
