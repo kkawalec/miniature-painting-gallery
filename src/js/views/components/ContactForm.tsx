@@ -6,6 +6,7 @@ import React, { Component } from 'react';
 import { Translate } from 'react-redux-i18n';
 import * as Yup from 'yup';
 
+import MuiCheckboxField from 'components/form/MuiCheckboxField';
 import MuiTextField from 'components/form/MuiTextField';
 import { env } from 'const/env';
 
@@ -30,6 +31,7 @@ const ContactSchema = Yup.object().shape({
   email: Yup.string().email().required(),
   phone: Yup.string().nullable().matches(phoneRegExp, 'Phone number is not valid').max(30),
   content: Yup.string().max(500).min(10).required(),
+  terms: Yup.boolean().oneOf([true], 'Must Accept Terms and Conditions'),
 });
 
 interface IContactFormRequest {
@@ -37,6 +39,7 @@ interface IContactFormRequest {
   email: string;
   phone: string;
   content: string;
+  terms: boolean;
 }
 
 const formInitialValues = {
@@ -44,6 +47,7 @@ const formInitialValues = {
   email: '',
   phone: '',
   content:  '',
+  terms: false,
   submit: null,
 };
 
@@ -102,6 +106,12 @@ class ContactForm extends Component<IContactFormProps, {}> {
             name="content"
             render={({ form, field }) =>
               <MuiTextField form={form} field={field} label={<Translate value="contact.form.message.label" />}  multiline rows="4" />}
+          />
+
+          <Field
+            name="terms"
+            render={({ form, field }) =>
+              <MuiCheckboxField form={form} field={field} label={<Translate value="contact.form.terms.label" />} />}
           />
 
           <Fab

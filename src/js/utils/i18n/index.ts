@@ -57,6 +57,9 @@ export default {
         message: {
           label: 'Message',
         },
+        terms: {
+          label: 'Todo: Wyrazam zgodę na przetwarzanie moich danych osobowych w celu kontaktu oraz realizacji zamówienia.',
+        },
       },
     },
   },
@@ -78,7 +81,7 @@ export default {
       examples: 'Zobacz przykłady',
       comment: '* Ceny podane dla podstawowego modelu w skali 28mm na podstawce 25mm. Dla kaźdego modelu ceny są ustalane indywidualnie na podstawie jego wielkości i poziomu detali.',
       battleReady: {
-        label: 'Gotowe do walki',
+        label: 'Podstawowe',
         p1: 'p1',
         p2: 'p2',
         p3: 'p3',
@@ -86,7 +89,7 @@ export default {
         price: '12 PLN *',
       },
       tableTop: {
-        label: 'Table top',
+        label: 'Standardowe',
         p1: 'p1',
         p2: 'p2',
         p3: 'p3',
@@ -94,7 +97,7 @@ export default {
         price: '20 PLN *',
       },
       withLove: {
-        label: 'Z miłoscią',
+        label: 'Profesjonalne',
         p1: 'p1',
         p2: 'p2',
         p3: 'p3',
@@ -103,20 +106,23 @@ export default {
       },
     },
     contact: {
-      title: 'Send us a message',
-      comment: 'You can contact us with anything related to our Products. We\'ll get in touch with you as soon as possible.',
+      title: 'Skontaktuj się',
+      comment: 'Masz pytania odnośnie malowania modeli? Chcesz oddać swoje figurki do malowania profesjonaliście? Skorzystaj z ponizszego formularza.',
       form: {
         name: {
-          label: 'Name',
+          label: 'Imię',
         },
         email: {
           label: 'Email',
         },
         phone: {
-          label: 'Phone',
+          label: 'Numer telefonu',
         },
         message: {
-          label: 'Message',
+          label: 'Wiadomość',
+        },
+        terms: {
+          label: 'Wyrazam zgodę na przetwarzanie moich danych osobowych w celu kontaktu oraz realizacji zamówienia.',
         },
       },
     },
