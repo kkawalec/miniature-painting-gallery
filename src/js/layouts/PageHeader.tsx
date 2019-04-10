@@ -16,14 +16,13 @@ const styles = {
     justifyContent: 'center',
   },
   appBar: {
-    marginBottom: 516,
+    marginBottom: 72,
   },
   headerImg: {
-    height: 'auto',
-    width: '100%',
-    maxHeight: 500,
-    position: 'absolute' as any,
-    top: 0,
+    backgroundPosition: 'center center',
+    backgroundSize: 'cover',
+    backgroundImage: `url(${ headerImg })`,
+    minHeight: 900,
   },
 };
 
@@ -92,17 +91,14 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
 
     return (
       <Fragment>
+      <div  className={classes.headerImg}>
       <AppBar className={classes.appBar} position="sticky" color="primary" style={style}>
         <Toolbar className={classes.toolBar} style={style}>
           {this.renderButtonLink()}
           <ChangeLangMenu />
         </Toolbar>
       </AppBar>
-      <img
-        src={headerImg}
-        className={classes.headerImg}
-        alt="Crystal Tyranids - Miniature Painting Studio"
-      />
+      </div>
       </Fragment>
     );
   }

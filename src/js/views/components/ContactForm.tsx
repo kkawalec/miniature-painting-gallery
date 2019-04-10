@@ -23,10 +23,12 @@ const styles = {
   },
 };
 
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
 const ContactSchema = Yup.object().shape({
   name: Yup.string().nullable().max(100).required(),
   email: Yup.string().email().required(),
-  phone: Yup.string().nullable().max(20),
+  phone: Yup.string().nullable().matches(phoneRegExp, 'Phone number is not valid').max(30),
   content: Yup.string().max(500).min(10).required(),
 });
 
@@ -102,8 +104,6 @@ class ContactForm extends Component<IContactFormProps, {}> {
               <MuiTextField form={form} field={field} label={<Translate value="contact.form.message.label" />}  multiline rows="4" />}
           />
 
-          {/* <DialogActions> */}
-
           <Fab
             type="submit"
             color="secondary"
@@ -113,7 +113,7 @@ class ContactForm extends Component<IContactFormProps, {}> {
           >
             Submit
           </Fab>
-          {/* </DialogActions> */}
+
         </Form>
          }
       </Formik>

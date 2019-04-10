@@ -16,6 +16,8 @@ const PageFooter = lazy(() => import(/* webpackChunkName: "pageFooter" */ 'layou
 const styles = {
   root: {
     flexGrow: 1,
+    maxWidth: 1500,
+    margin: 'auto',
   },
 };
 
