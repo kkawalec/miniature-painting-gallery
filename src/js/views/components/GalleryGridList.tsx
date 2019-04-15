@@ -4,10 +4,6 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import { withStyles } from '@material-ui/core/styles';
 import React from 'react';
 
-const img1 = require('../../../images/header-image.jpg');
-const img2 = require('../../../images/en.png');
-const img3 = require('../../../images/pl.png');
-
 const styles = (theme: any) => ({
   root: {
     display: 'flex',
@@ -28,27 +24,25 @@ const styles = (theme: any) => ({
   },
 });
 
-// TODO Add images
-const tileData = [
-  {
-    img: img1,
-    title: 'Img1',
-    featured: true,
-  },
-  {
-    img: img2,
-    title: 'Img2',
-    featured: false,
-  },
-  {
-    img: img3,
-    title: 'Image3',
-    featured: false,
-  },
-];
+export interface IGalleryTile {
+  img: string;
+  title: string;
+  featured: boolean;
+  game: string;
+  paintingType: string;
+}
 
-function GalleryGridList(props: any) {
-  const { classes } = props;
+interface IGalleryGridListProps {
+  classes: {
+    root: string,
+    gridList: string,
+    titleBar: string,
+  };
+  tileData: IGalleryTile[];
+}
+
+function GalleryGridList(props) {
+  const { classes, tileData } = props;
 
   return (
     <div className={classes.root}>

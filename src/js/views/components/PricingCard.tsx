@@ -65,9 +65,11 @@ class PricingCard extends React.PureComponent<IPricingCardProps, {}> {
           <MenuItem disabled className={classes.item}><Translate value={`pricing.${name}.p4`} /></MenuItem>
         </MenuList>
 
-        <Fab variant="extended" color="primary" className={classes.button}>
-          <Translate value="pricing.examples" />
-        </Fab>
+        <a href="#gallery">
+          <Fab variant="extended" color="primary" className={classes.button}>
+            <Translate value="pricing.examples" />
+          </Fab>
+        </a>
       </Paper>
     );
   }

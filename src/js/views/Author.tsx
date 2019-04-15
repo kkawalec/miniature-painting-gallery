@@ -29,7 +29,7 @@ class Author extends React.Component<IAuthorProps, {}> {
       <ScrollableAnchor id="author">
         <Grid container justify="center" alignItems="center">
           <Grid item xs={12} sm={2}>
-            <Avatar alt="Remy Sharp" src={img1} className={classes.avatar} />
+            <Avatar alt="Karolina Modes" src={img1} className={classes.avatar} />
           </Grid>
           <Grid item xs={12} sm={5}>
             <Typography variant="h5" gutterBottom>

@@ -11,12 +11,27 @@ export default {
     },
     gallery: {
       label: 'Gallery',
+      filters: {
+        games: {
+          label: 'System',
+          AOS: 'Warhammer Age of Sigmar',
+          '40K': 'Warhammer 40K',
+          Necromunda: 'Necromunda',
+          Malifaux: 'Malifaux',
+        },
+        paintingTypes: {
+          label: 'Painting type',
+          basic: 'Basic',
+          standard: 'Standard',
+          pro: 'Professional',
+        },
+      },
     },
     pricing: {
       label: 'Pricing',
       examples: 'See examples',
       comment: '* Prices for basic model in 28 mm scale and 25mm base. For each model, prices are determined individually on the basis of its size and level of details.',
-      battleReady: {
+      basic: {
         label: 'Battle ready',
         p1: 'p1',
         p2: 'p2',
@@ -24,7 +39,7 @@ export default {
         p4: 'p4',
         price: '12 PLN *',
       },
-      tableTop: {
+      standard: {
         label: 'Table top',
         p1: 'p1',
         p2: 'p2',
@@ -32,7 +47,7 @@ export default {
         p4: 'p4',
         price: '20 PLN *',
       },
-      withLove: {
+      pro: {
         label: 'With love',
         p1: 'p1',
         p2: 'p2',
@@ -75,12 +90,27 @@ export default {
     },
     gallery: {
       label: 'Galeria',
+      filters: {
+        games: {
+          label: 'System',
+          AOS: 'Warhammer Age of Sigmar',
+          '40K': 'Warhammer 40K',
+          Necromunda: 'Necromunda',
+          Malifaux: 'Malifaux',
+        },
+        paintingTypes: {
+          label: 'Poziom malowania',
+          basic: 'Podstawowe',
+          standard: 'Standardowe',
+          pro: 'Profesjonalne',
+        },
+      },
     },
     pricing: {
       label: 'Cennik',
       examples: 'Zobacz przykłady',
       comment: '* Ceny podane dla podstawowego modelu w skali 28mm na podstawce 25mm. Dla kaźdego modelu ceny są ustalane indywidualnie na podstawie jego wielkości i poziomu detali.',
-      battleReady: {
+      basic: {
         label: 'Podstawowe',
         p1: 'p1',
         p2: 'p2',
@@ -88,7 +118,7 @@ export default {
         p4: 'p4',
         price: '12 PLN *',
       },
-      tableTop: {
+      standard: {
         label: 'Standardowe',
         p1: 'p1',
         p2: 'p2',
@@ -96,7 +126,7 @@ export default {
         p4: 'p4',
         price: '20 PLN *',
       },
-      withLove: {
+      pro: {
         label: 'Profesjonalne',
         p1: 'p1',
         p2: 'p2',
