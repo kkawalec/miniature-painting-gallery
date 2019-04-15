@@ -1,6 +1,6 @@
 import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
+import { createStyles, withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
 import React, { Fragment } from 'react';
 import { Translate } from 'react-redux-i18n';
@@ -10,7 +10,7 @@ import ChangeLangMenu from 'layouts/components/ChangeLangMenu';
 // TODO: Add proper image
 const headerImg = require('../../images/header-image.jpg');
 
-const styles = {
+const styles = createStyles({
   toolBar: {
     flexGrow: 1,
     justifyContent: 'center',
@@ -24,7 +24,7 @@ const styles = {
     backgroundImage: `url(${ headerImg })`,
     minHeight: 900,
   },
-};
+});
 
 const transparentStyle = {
   boxShadow: '0 0 0 0 rgb(0, 0, 0, 0)',
@@ -43,12 +43,17 @@ interface IPageHeaderState {
   isScrolled: boolean;
 }
 
-const links = [
-  { to: '#about', label: <Translate value="about.label" />, icon: null },
-  { to: '#gallery', label: <Translate value="gallery.label" />, icon: null },
-  { to: '#author', label: <Translate value="author.label" />, icon: null },
-  { to: '#pricing', label: <Translate value="pricing.label" />, icon: null },
-  { to: '#contact', label: <Translate value="contact.label" />, icon: null },
+interface ILink {
+  to: string;
+  label: React.ReactNode;
+}
+
+const links: ILink[] = [
+  { to: '#about', label: <Translate value="about.label" /> },
+  { to: '#gallery', label: <Translate value="gallery.label" /> },
+  { to: '#author', label: <Translate value="author.label" /> },
+  { to: '#pricing', label: <Translate value="pricing.label" /> },
+  { to: '#contact', label: <Translate value="contact.label" /> },
 ];
 
 class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {

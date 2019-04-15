@@ -30,7 +30,7 @@ ReactDOM.render(localAppRouter, rootFolder);
 /**
  * Hot reloading for development only
  */
-declare const module;
+declare const module: any;
 if (env === 'development' && module.hot) {
   module.hot.accept('./store/mainReducer', () => {
     const nextRootReducer = require('./store/mainReducer').default;

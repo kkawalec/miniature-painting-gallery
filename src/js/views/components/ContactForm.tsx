@@ -1,7 +1,7 @@
 import Fab from '@material-ui/core/Fab';
 import { withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
-import { Field, Form, Formik } from 'formik';
+import { Field, FieldProps, Form, Formik, FormikActions } from 'formik';
 import React, { Component } from 'react';
 import { Translate } from 'react-redux-i18n';
 import * as Yup from 'yup';
@@ -48,7 +48,7 @@ const formInitialValues = {
   phone: '',
   content:  '',
   terms: false,
-  submit: null,
+  submit: null as any,
 };
 
 interface IContactFormProps {
@@ -59,8 +59,10 @@ interface IContactFormProps {
 }
 
 class ContactForm extends Component<IContactFormProps, {}> {
-  public handleSubmit = (values: IContactFormRequest, { setSubmitting, setErrors, setStatus, resetForm }): Promise<void> => {
-    alert(JSON.stringify(values));
+  public handleSubmit = (
+    values: IContactFormRequest,
+    { setSubmitting, setErrors, setStatus, resetForm }: FormikActions<IContactFormRequest>,
+    ): Promise<void> => {
 
     return axios.post(env.API_URL, values)
       .then(() => {
@@ -71,7 +73,7 @@ class ContactForm extends Component<IContactFormProps, {}> {
         console.error(error);
         setStatus({ success: false });
         setSubmitting(false);
-        setErrors({ submit: error.message });
+        setErrors({ submit: error.message } as any);
       });
   }
 
@@ -89,28 +91,28 @@ class ContactForm extends Component<IContactFormProps, {}> {
           {errors && (errors as any).submit &&  <div>BLAD!!</div>}
           <Field
             name="name"
-            render={({ form, field }) =>
+            render={({ form, field }: FieldProps<IContactFormRequest>) =>
               <MuiTextField form={form} field={field} label={<Translate value="contact.form.name.label" />} />}
           />
           <Field
             name="email"
-            render={({ form, field }) =>
+            render={({ form, field }: FieldProps<IContactFormRequest>) =>
               <MuiTextField form={form} field={field} label={<Translate value="contact.form.email.label" />}  />}
           />
           <Field
             name="phone"
-            render={({ form, field }) =>
+            render={({ form, field }: FieldProps<IContactFormRequest>) =>
               <MuiTextField form={form} field={field} label={<Translate value="contact.form.phone.label" />} />}
           />
           <Field
             name="content"
-            render={({ form, field }) =>
+            render={({ form, field }: FieldProps<IContactFormRequest>) =>
               <MuiTextField form={form} field={field} label={<Translate value="contact.form.message.label" />}  multiline rows="4" />}
           />
 
           <Field
             name="terms"
-            render={({ form, field }) =>
+            render={({ form, field }: FieldProps<IContactFormRequest>) =>
               <MuiCheckboxField form={form} field={field} label={<Translate value="contact.form.terms.label" />} />}
           />
 

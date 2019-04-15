@@ -1,13 +1,13 @@
 import GridList from '@material-ui/core/GridList';
 import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
-import { withStyles } from '@material-ui/core/styles';
+import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import React from 'react';
 
-const styles = (theme: any) => ({
+const styles = (theme: Theme) => createStyles({
   root: {
     display: 'flex',
-    flexWrap: 'wrap' as any,
+    flexWrap: 'wrap',
     justifyContent: 'space-around',
     overflow: 'hidden',
     backgroundColor: theme.palette.background.paper,
@@ -41,13 +41,13 @@ interface IGalleryGridListProps {
   tileData: IGalleryTile[];
 }
 
-function GalleryGridList(props) {
+function GalleryGridList(props: IGalleryGridListProps) {
   const { classes, tileData } = props;
 
   return (
     <div className={classes.root}>
       <GridList cellHeight={200} spacing={1} className={classes.gridList}>
-        {tileData.map(tile => (
+        {tileData.map((tile: IGalleryTile) => (
           <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar

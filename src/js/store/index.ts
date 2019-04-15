@@ -10,7 +10,7 @@ import AxiosApiConnector from 'utils/api-connector/AxiosApiConnector';
 import history from './history';
 import mainReducer from './mainReducer';
 
-declare const window;
+declare const window: any;
 const env = process.env.NODE_ENV || 'development';
 
 const middlewaresToCompose = applyMiddleware(
@@ -20,7 +20,7 @@ const middlewaresToCompose = applyMiddleware(
 
 const enhancer = env === 'development' ? compose(
    middlewaresToCompose,
-   window.devToolsExtension ? window.devToolsExtension() : f => f,
+   window.devToolsExtension ? window.devToolsExtension() : (f: any) => f,
 ) : compose(middlewaresToCompose);
 
 const store = createStore(mainReducer, enhancer);

@@ -39,7 +39,14 @@
     "yup": "^0.27.0"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.123",
     "@types/node": "11.11.5",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-redux": "^7.0.6",
+    "@types/react-redux-i18n": "0.0.11",
+    "@types/react-router-dom": "^4.3.2",
+    "@types/react-scrollable-anchor": "^0.6.0",
+    "@types/yup": "^0.26.12",
     "css-loader": "^2.1.1",
     "express": "^4.16.4",
     "file-loader": "^3.0.1",

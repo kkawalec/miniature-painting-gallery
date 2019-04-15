@@ -2,13 +2,12 @@ import Checkbox from '@material-ui/core/Checkbox';
 import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
-import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
-import { withStyles } from '@material-ui/core/styles';
+import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import React from 'react';
 import { Translate } from 'react-redux-i18n';
 
-const styles = theme => ({
+const styles = (theme: Theme) => createStyles({
   root: {
     display: 'flex',
   },
@@ -32,9 +31,9 @@ interface IGalleryFilterProps {
   onChange: (filterName: string, filter: IFilter) => void;
 }
 
-class GalleryFilter extends React.Component<IGalleryFilterProps, any> {
+class GalleryFilter extends React.Component<IGalleryFilterProps> {
 
-  public handleChange = (filter: any) => (event: any) => {
+  public handleChange = (filter: IFilter) => (event: any) => {
 
     this.props.onChange(this.props.filterName, {
       ...filter,

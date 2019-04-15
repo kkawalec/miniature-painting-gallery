@@ -1,14 +1,21 @@
 import MomentUtils from '@date-io/moment';
 import { DatePicker, MuiPickersUtilsProvider } from 'material-ui-pickers';
-import moment from 'moment';
+import moment, { Moment } from 'moment';
 import React from 'react';
 
-export function MuiDateField({ form, field, label, ...otherProps }) {
+// TODO fix any
+interface IProps {
+  form: any;
+  field: any;
+  label: any;
+}
+
+export function MuiDateField({ form, field, label, ...otherProps }: IProps) {
 
   const helperText = form.touched[field.name] && form.errors[field.name]
     ? form.errors[field.name] : '';
 
-  const handleChange = (value) => {
+  const handleChange = (value: Moment) => {
     form.setFieldValue(field.name, value.toISOString(), true);
   };
 
@@ -28,7 +35,8 @@ export function MuiDateField({ form, field, label, ...otherProps }) {
         animateYearScrolling
         minDate={new Date()}
       />
-    </MuiPickersUtilsProvider>);
+    </MuiPickersUtilsProvider>
+  );
 }
 
 export default MuiDateField;

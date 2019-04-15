@@ -3,7 +3,7 @@ import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 import Grow from '@material-ui/core/Grow';
 import MenuList from '@material-ui/core/MenuList';
 import Paper from '@material-ui/core/Paper';
-import Popper from '@material-ui/core/Popper';
+import Popper, { PopperPlacementType } from '@material-ui/core/Popper';
 import { withStyles } from '@material-ui/core/styles';
 import React from 'react';
 
@@ -26,7 +26,7 @@ interface IDropdownMenuState {
 
 class DropdownMenu extends React.Component<IDropdownMenuProps, IDropdownMenuState> {
   public state = {
-    anchorEl: null,
+    anchorEl: null as any,
     open: false,
   };
 
@@ -34,7 +34,7 @@ class DropdownMenu extends React.Component<IDropdownMenuProps, IDropdownMenuStat
     this.setState(state => ({ open: !state.open }));
   }
 
-  public handleClose = (event) => {
+  public handleClose = (event: React.SyntheticEvent<any>) => {
     if (this.state.anchorEl.contains(event.target)) {
       return;
     }
@@ -47,7 +47,9 @@ class DropdownMenu extends React.Component<IDropdownMenuProps, IDropdownMenuStat
     const { open } = this.state;
     const extraProps = { id };
 
-    const popper = ({ TransitionProps, placement }) => (
+    const popper = ({ TransitionProps, placement }: {
+      placement: PopperPlacementType;
+      TransitionProps?: any}) => (
       <Grow
         {...TransitionProps}
         {...extraProps}

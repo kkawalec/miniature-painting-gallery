@@ -1,7 +1,14 @@
-import TextField from '@material-ui/core/TextField';
+import TextField, { TextFieldProps } from '@material-ui/core/TextField';
 import React from 'react';
 
-export function MuiTextField({ form, field, label, ...otherProps }) {
+// TODO fix any
+interface IProps {
+  form: any;
+  field: any;
+  label: any;
+}
+
+export function MuiTextField({ form, field, label, ...otherProps }: IProps & TextFieldProps) {
 
   const helperText = form.touched[field.name] && form.errors[field.name]
     ? form.errors[field.name] : '';
@@ -16,7 +23,8 @@ export function MuiTextField({ form, field, label, ...otherProps }) {
       margin="normal"
       helperText={helperText}
       InputLabelProps={{ shrink: true }}
-    /> );
+    />
+  );
 }
 
 export default MuiTextField;

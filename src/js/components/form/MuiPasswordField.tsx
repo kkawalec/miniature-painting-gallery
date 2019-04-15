@@ -8,7 +8,14 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import React, { useState } from 'react';
 
-export function MuiPasswordField({ form, field, label, ...otherProps }) {
+// TODO fix any
+interface IProps {
+  form: any;
+  field: any;
+  label: any;
+}
+
+export function MuiPasswordField({ form, field, label, ...otherProps }: IProps) {
 
   const [shouldShowPassword, setShouldShowPassword] = useState(false);
 
@@ -23,7 +30,8 @@ export function MuiPasswordField({ form, field, label, ...otherProps }) {
       >
       {shouldShowPassword ? <Visibility /> : <VisibilityOff />}
       </IconButton>
-    </InputAdornment>);
+    </InputAdornment>
+    );
 
   return (
     <FormControl fullWidth>

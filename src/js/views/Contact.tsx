@@ -1,6 +1,6 @@
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
+import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React, { PureComponent } from 'react';
 import { Translate } from 'react-redux-i18n';
@@ -11,14 +11,9 @@ import CallIcon from '@material-ui/icons/CallRounded';
 
 import ContactForm from 'views/components/ContactForm';
 
-const styles = (theme: any) => ({
+const styles = (theme: Theme) => createStyles({
   paper: {
     padding: 24,
-    // display: 'flex',
-    // flexDirection: 'column' as any,
-    // alignItems: 'center',
-    // maxWidth: 350,
-    // minWidth: 250,
   },
   header: {
     marginBottom: 16,
@@ -26,7 +21,7 @@ const styles = (theme: any) => ({
   },
   info: {
     alignItems: 'center',
-    flexDirection: 'column' as any,
+    flexDirection: 'column',
     display: 'flex',
     justifyContent: 'center',
     height: '100%',

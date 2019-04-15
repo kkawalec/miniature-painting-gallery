@@ -3,22 +3,22 @@ import Fab from '@material-ui/core/Fab';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
 import Paper from '@material-ui/core/Paper';
-import { withStyles } from '@material-ui/core/styles';
+import { createStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import React from 'react';
 import { Translate } from 'react-redux-i18n';
 
-const styles = {
+const styles = createStyles({
   paper: {
     padding: 24,
     display: 'flex',
-    flexDirection: 'column' as any,
+    flexDirection: 'column',
     alignItems: 'center',
     maxWidth: 350,
     minWidth: 250,
   },
   header: {
-    textAlign: 'center' as any,
+    textAlign: 'center',
   },
   item: {
     display: 'flex',
@@ -27,7 +27,7 @@ const styles = {
   button: {
     maxWidth: 200,
   },
-};
+});
 
 interface IPricingCardProps {
   name: string;

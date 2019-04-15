@@ -74,7 +74,7 @@ class Gallery extends React.Component<IGalleryProps, IGalleryState> {
       filters:
       {
         ...this.state.filters,
-        [filterName]: this.state.filters[filterName].map((f: IFilter) => {
+        [filterName]: (this.state.filters as any)[filterName].map((f: IFilter) => {
           if (filter.label === f.label) {
             return filter;
           }
@@ -118,7 +118,7 @@ class Gallery extends React.Component<IGalleryProps, IGalleryState> {
             />
           </Grid>
           <Grid item xs={12}>
-            <GalleryGridList tileData={tiles} filters={filters}/>
+            <GalleryGridList tileData={tiles} />
           </Grid>
         </Grid>
       </ScrollableAnchor>
