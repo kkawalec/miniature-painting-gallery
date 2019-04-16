@@ -10,15 +10,20 @@ const img1 = require('../../images/header-image.jpg');
 
 const styles = {
   avatar: {
-    margin: 10,
     width: 120,
     height: 120,
+    margin: 'auto auto',
+  },
+  root: {
+    marginTop: 36,
+    marginBottom: 36,
   },
 };
 
 interface IAuthorProps {
   classes: {
     avatar: string;
+    root: string;
   };
 }
 
@@ -27,11 +32,11 @@ class Author extends React.Component<IAuthorProps, {}> {
     const { classes } = this.props;
     return (
       <ScrollableAnchor id="author">
-        <Grid container justify="center" alignItems="center">
-          <Grid item xs={12} sm={2}>
+        <Grid container justify="center" alignItems="center" className={classes.root}>
+          <Grid item xs={12} sm={4}>
             <Avatar alt="Karolina Modes" src={img1} className={classes.avatar} />
           </Grid>
-          <Grid item xs={12} sm={5}>
+          <Grid item xs={12} sm={8}>
             <Typography variant="h5" gutterBottom>
               <Translate value="author.name" />
             </Typography>

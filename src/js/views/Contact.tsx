@@ -19,6 +19,9 @@ const styles = (theme: Theme) => createStyles({
     marginBottom: 16,
     padding: 24,
   },
+  title: {
+    marginBottom: 24,
+  },
   info: {
     alignItems: 'center',
     flexDirection: 'column',
@@ -39,6 +42,7 @@ interface IContactProps {
   classes: {
     paper: string,
     header: string,
+    title: string,
     info: string,
     icon: string,
     infoHeader: string,
@@ -52,10 +56,9 @@ class Contact extends PureComponent<IContactProps, {}> {
       <ScrollableAnchor id="contact">
         <Paper className={classes.paper}>
           <Grid container justify="center" alignItems="center">
-
             <Grid item xs={12} sm={6} >
               <div className={classes.header}>
-                <Typography variant="h3">
+                <Typography variant="h3" className={classes.title}>
                   <Translate value="contact.title" />
                 </Typography>
                 <Typography variant="body1">
@@ -69,24 +72,26 @@ class Contact extends PureComponent<IContactProps, {}> {
 
               <Typography variant="h5">
                 <CallIcon className={classes.icon} />
-                <Translate value="Call us directly" />
+                <Translate value="contact.author.callUs" />
               </Typography>
 
               <Typography variant="body1">
-                <p>Karolina Modes</p>
-                <p>+48600503507</p>
-                <p>Every day, 9:00-22:00</p>
+                <Translate tag="p" value="contact.author.name" />
+                <Translate tag="p" value="contact.author.phone" />
+                <Translate tag="p" value="contact.author.when" />
               </Typography>
 
               <Typography variant="h5" className={classes.infoHeader}>
                 <BussinnessIcon className={classes.icon} />
-                <Translate value="Legal information" />
+                <Translate value="contact.legal.title" />
               </Typography>
 
               <Typography variant="body1">
-                <p>Karolina Modes AedLabs</p>
-                <p>NIP ..... </p>
-                <p>Address....</p>
+                <Translate tag="p" value="contact.legal.company" />
+                <Translate tag="p" value="contact.legal.nip" />
+                <Translate tag="p" value="contact.legal.regon" />
+                <Translate tag="p" value="contact.legal.address" />
+                <Translate tag="p" value="contact.legal.city" />
               </Typography>
               </div>
             </Grid>

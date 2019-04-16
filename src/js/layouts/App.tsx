@@ -10,7 +10,7 @@ import Content from 'layouts/Content';
 import IState from 'store/interfaces/IState';
 import theme from 'utils/mui/theme.json';
 
-const PageHeader = lazy(() => import(/* webpackChunkName: "pageHeader" */ 'layouts/PageHeader'));
+import PageHeader from 'layouts/PageHeader';
 const PageFooter = lazy(() => import(/* webpackChunkName: "pageFooter" */ 'layouts/PageFooter'));
 
 const styles = {

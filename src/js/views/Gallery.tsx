@@ -1,5 +1,5 @@
 import Grid from '@material-ui/core/Grid';
-import { withStyles } from '@material-ui/core/styles';
+import { createStyles, withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import _ from 'lodash';
 import React from 'react';
@@ -40,16 +40,20 @@ const tileData: IGalleryTile[] = [
 const games = ['AOS', '40K', 'Necromunda', 'Malifaux'];
 const paintingTypes = ['basic', 'standard', 'pro'];
 
-const styles = {
+const styles = createStyles({
   filters: {
     display: 'flex',
     justifyContent: 'center',
   },
-};
+  header: {
+    textAlign: 'center',
+  },
+});
 
 interface IGalleryProps {
   classes: {
     filters: string,
+    header: string,
   };
 }
 
@@ -98,7 +102,7 @@ class Gallery extends React.Component<IGalleryProps, IGalleryState> {
       <ScrollableAnchor id="gallery">
         <Grid container justify="center" alignItems="center">
           <Grid item xs={12}>
-            <Typography variant="h3" gutterBottom>
+            <Typography variant="h3" gutterBottom className={classes.header}>
               <Translate value="gallery.label" />
             </Typography>
           </Grid>
