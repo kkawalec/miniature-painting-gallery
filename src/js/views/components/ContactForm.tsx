@@ -1,5 +1,5 @@
 import Fab from '@material-ui/core/Fab';
-import { withStyles } from '@material-ui/core/styles';
+import { createStyles, withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import { Field, FieldProps, Form, Formik, FormikActions } from 'formik';
 import React, { Component } from 'react';
@@ -10,11 +10,11 @@ import MuiCheckboxField from 'components/form/MuiCheckboxField';
 import MuiTextField from 'components/form/MuiTextField';
 import { env } from 'const/env';
 
-const styles = {
+const styles = createStyles({
   form: {
     padding: 24,
     display: 'flex',
-    flexDirection: 'column' as any,
+    flexDirection: 'column',
     alignItems: 'center',
     minWidth: 250,
   },
@@ -22,7 +22,7 @@ const styles = {
     width: 150,
     marginTop: 24,
   },
-};
+});
 
 const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
 

@@ -1,11 +1,13 @@
 import TextField, { TextFieldProps } from '@material-ui/core/TextField';
+import { FormikProps } from 'formik';
 import React from 'react';
 
-// TODO fix any
+import IFieldProps from './IFieldProps';
+
 interface IProps {
-  form: any;
-  field: any;
-  label: any;
+  form: FormikProps<any>;
+  field: IFieldProps;
+  label: React.ReactNode;
 }
 
 export function MuiTextField({ form, field, label, ...otherProps }: IProps & TextFieldProps) {

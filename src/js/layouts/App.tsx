@@ -31,7 +31,6 @@ class App extends React.Component<IAppProps, {}> {
     const { classes } = this.props;
     return (
       <MuiThemeProvider theme={createMuiTheme(theme)}>
-        {/* <Suspense fallback={Loader}> */}
           <React.Fragment>
             <div className="main-content">
             <Suspense fallback={Loader}>
@@ -48,7 +47,6 @@ class App extends React.Component<IAppProps, {}> {
               </Suspense>
               <CookieAlert/>
           </React.Fragment>
-        {/* </Suspense> */}
       </MuiThemeProvider>
     );
   }

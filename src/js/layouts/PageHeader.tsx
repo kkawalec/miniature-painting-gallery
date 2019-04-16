@@ -2,6 +2,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Button from '@material-ui/core/Button';
 import { createStyles, withStyles } from '@material-ui/core/styles';
 import Toolbar from '@material-ui/core/Toolbar';
+import classNames from 'classnames';
 import React, { Fragment } from 'react';
 import { Translate } from 'react-redux-i18n';
 
@@ -14,22 +15,22 @@ const styles = createStyles({
   toolBar: {
     flexGrow: 1,
     justifyContent: 'center',
+    transition: 'background-color 0.5s, box-shadow 0.5s',
   },
   appBar: {
-    marginBottom: 72,
+    marginBottom: 872,
+    transition: 'background-color 0.5s, box-shadow 0.5s',
   },
   headerImg: {
     backgroundPosition: 'center center',
     backgroundSize: 'cover',
     backgroundImage: `url(${ headerImg })`,
     minHeight: 900,
+    position: 'absolute',
+    top: 0,
+    width: '100%',
   },
 });
-
-const transparentStyle = {
-  boxShadow: '0 0 0 0 rgb(0, 0, 0, 0)',
-  backgroundColor: 'rgb(0, 0, 0, 0)',
-};
 
 interface IPageHeaderProps {
   classes: {
@@ -92,18 +93,17 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
   public render(): JSX.Element {
     const { classes } = this.props;
     const { isScrolled } = this.state;
-    const style = isScrolled ? {} : transparentStyle;
 
     return (
       <Fragment>
-      <div  className={classes.headerImg}>
-      <AppBar className={classes.appBar} position="sticky" color="primary" style={style}>
-        <Toolbar className={classes.toolBar} style={style}>
+      <AppBar className={classNames(classes.appBar, { transparent: !isScrolled })} position="sticky" color="primary">
+        <Toolbar className={classNames(classes.toolBar, { transparent: !isScrolled })} >
           {this.renderButtonLink()}
           <ChangeLangMenu />
         </Toolbar>
       </AppBar>
-      </div>
+      <div  className={classes.headerImg} />
+
       </Fragment>
     );
   }

@@ -4,7 +4,10 @@ import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
 import Select from '@material-ui/core/Select';
 import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
+import { FormikProps } from 'formik';
 import React from 'react';
+
+import IFieldProps from './IFieldProps';
 
 export interface ISelectValue {
   label: string;
@@ -12,9 +15,9 @@ export interface ISelectValue {
 }
 
 interface IProps {
-  form: any;
-  field: any;
-  label: any;
+  form: FormikProps<any>;
+  field: IFieldProps;
+  label: React.ReactNode;
   classes: {
     formControl: string,
   };

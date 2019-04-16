@@ -5,14 +5,16 @@ import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import FormLabel from '@material-ui/core/FormLabel';
+import { FormikProps } from 'formik';
 import React from 'react';
 
-// TODO fix any
+import IFieldProps from './IFieldProps';
+
 interface IProps {
-  form: any;
-  field: any;
-  label: any;
-  header?: any;
+  form: FormikProps<any>;
+  field: IFieldProps;
+  label: React.ReactNode;
+  header?: React.ReactNode;
 }
 
 export function MuiCheckboxField({ form, field, label, header }: IProps) {

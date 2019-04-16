@@ -8,11 +8,13 @@ import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import React, { useState } from 'react';
 
-// TODO fix any
+import { FormikProps } from 'formik';
+import IFieldProps from './IFieldProps';
+
 interface IProps {
-  form: any;
-  field: any;
-  label: any;
+  form: FormikProps<any>;
+  field: IFieldProps;
+  label: React.ReactNode;
 }
 
 export function MuiPasswordField({ form, field, label, ...otherProps }: IProps) {

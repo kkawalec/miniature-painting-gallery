@@ -1,13 +1,15 @@
 import MomentUtils from '@date-io/moment';
+import { FormikProps } from 'formik';
 import { DatePicker, MuiPickersUtilsProvider } from 'material-ui-pickers';
 import moment, { Moment } from 'moment';
 import React from 'react';
 
-// TODO fix any
+import IFieldProps from './IFieldProps';
+
 interface IProps {
-  form: any;
-  field: any;
-  label: any;
+  form: FormikProps<any>;
+  field: IFieldProps;
+  label: React.ReactNode;
 }
 
 export function MuiDateField({ form, field, label, ...otherProps }: IProps) {
