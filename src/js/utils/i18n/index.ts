@@ -1,5 +1,9 @@
 export default {
   en: {
+    cookies: {
+      content: 'We use cookies to ensure that we give you the best experience on our website.',
+      accept: 'Accept',
+    },
     about: {
       label: 'About',
       header: 'Miniature Painting Studio',
@@ -80,25 +84,41 @@ export default {
         city: '00-105 Warsaw',
       },
       form: {
+        success: 'The message has been sent. We will contact You as soon as possible.',
+        error: 'Sorry, service is unavailable right now. Please try again later.',
         name: {
           label: 'Name',
+          length: 'Name cannot be longer than 100 characters.',
+          required: 'Please provide a name.',
         },
         email: {
           label: 'Email',
+          valid: 'Please provide a valid email address.',
+          required: 'Please provide a valid email address.',
         },
         phone: {
           label: 'Phone',
+          valid: 'Please provide a valid phone number.',
+          length: 'Phone number cannot be longer than 20 characters.',
         },
-        message: {
+        content: {
           label: 'Message',
+          minLength: 'Message cannot be shorter than 10 characters.',
+          maxLength: 'Message cannot be longer than 500 characters.',
+          required: 'Please provide a message.',
         },
         terms: {
-          label: 'Todo: Wyrazam zgodę na przetwarzanie moich danych osobowych w celu kontaktu oraz realizacji zamówienia.',
+          label: 'I agree to the processing of my personal data in order to carry out the figurine painting service by Karolina Modes AedLabs.',
+          accepted: 'Please accept terms.',
         },
       },
     },
   },
   pl: {
+    cookies: {
+      content: 'Ta strona korzysta z ciasteczek aby świadczyć usługi na najwyższym poziomie. Dalsze korzystanie z witryny oznacza zgodę na ich użycie.',
+      accept: 'Zgoda',
+    },
     about: {
       label: 'O nas',
       header: 'Studio malowania figurek',
@@ -180,20 +200,32 @@ export default {
         city: '00-105 Warszawa',
       },
       form: {
+        success: 'Wiadomość została wysłana. Odpowiemy na nią tak szybko jak to możliwe.',
+        error: 'Wysłanie wiadomości nie powiodło się. Prosimy spróbować ponownie później.',
         name: {
           label: 'Imię',
+          length: 'Imię nie może być dłuższe niż 100 znaków.',
+          required: 'Prosimy podać imię.',
         },
         email: {
           label: 'Email',
+          valid: 'Prosimy podać poprawny adres email.',
+          required: 'Prosimy podać poprawny adres email.',
         },
         phone: {
           label: 'Numer telefonu',
+          valid: 'Prosimy podać poprawny numer telefonu.',
+          length: 'Numer telefonu nie moźe być dłuższy niż 20 znaków.',
         },
-        message: {
+        content: {
           label: 'Wiadomość',
+          minLength: 'Wiadomość nie może być krótsza niż 10 znaków.',
+          maxLength: 'Wiadomość nie może być dłuższa niż 500 znaków.',
+          required: 'Prosimy podać treść wiadomości.',
         },
         terms: {
-          label: 'Wyrazam zgodę na przetwarzanie moich danych osobowych w celu realizacji usługi.',
+          label: 'Wyrażam zgodę na przetwarzanie moich danych osobowych w celu realizacji usługi malowania figurek przez firmę Karolina Modes AedLabs.',
+          accepted: 'Prosimy wyrazić zgodę na przetwarzanie danych osobowych.',
         },
       },
     },

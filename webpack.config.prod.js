@@ -12,7 +12,7 @@ module.exports = {
   mode: 'production',
   devtool: 'source-map',
   entry: {
-    app: path.resolve(__dirname, '/src/js/index'),
+    app: './src/js/index.tsx',
   },
   output: {
     filename: 'js/[name].[chunkhash].js',
@@ -64,7 +64,7 @@ module.exports = {
       },
     }),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, '/static/index.ejs'),
+      template: './static/index.ejs',
       filename: '200.html',
       inject: true,
       minify: {
@@ -85,7 +85,7 @@ module.exports = {
   resolve: {
     extensions: ['.ts', '.tsx', '.js'],
     modules: [
-			'app',
+			'src/js',
 			'node_modules'
 		],
   },
@@ -99,7 +99,8 @@ module.exports = {
           {
             loader: 'tslint-loader',
             options: {
-              configFile: 'tslintconfig.json',
+              configFile: 'tslint.json',
+              tsConfigFile: 'tsconfig.json',
               sourceMap: true,
             },
           },
