@@ -1,9 +1,8 @@
+import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
+import { env } from 'const/env';
 import React from 'react';
 import CookieConsent from 'react-cookie-consent';
-import { Translate, I18n } from 'react-redux-i18n';
-import { env } from 'const/env';
-import { createStyles, withStyles, Theme } from '@material-ui/core/styles';
-
+import { I18n, Translate } from 'react-redux-i18n';
 
 const styles = (theme: Theme) =>  createStyles({
   button: {
@@ -29,8 +28,8 @@ interface ICookieAlertProps {
 
 class CookieAlert extends React.PureComponent<ICookieAlertProps> {
 
-  render() {
-    const {classes} = this.props;
+  public render() {
+    const { classes } = this.props;
     return (
       <CookieConsent
         location="bottom"
@@ -41,7 +40,6 @@ class CookieAlert extends React.PureComponent<ICookieAlertProps> {
         expires={10}
       >
         <Translate value="cookies.content" />
-
       </CookieConsent>
     );
   }

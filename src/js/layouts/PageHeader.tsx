@@ -8,8 +8,7 @@ import { Translate } from 'react-redux-i18n';
 
 import ChangeLangMenu from 'layouts/components/ChangeLangMenu';
 
-// TODO: Add proper image
-const headerImg = require('../../images/header-image.jpg');
+const headerImg = require('../../images/NecromundaHeaderImage.jpg');
 
 const styles = createStyles({
   toolBar: {
@@ -30,6 +29,9 @@ const styles = createStyles({
     top: 0,
     width: '100%',
   },
+  button: {
+    color: 'white',
+  },
 });
 
 interface IPageHeaderProps {
@@ -37,6 +39,7 @@ interface IPageHeaderProps {
     appBar: string,
     toolBar: string,
     headerImg: string,
+    button: string,
   };
 }
 
@@ -83,7 +86,7 @@ class PageHeader extends React.Component<IPageHeaderProps, IPageHeaderState> {
   public renderButtonLink(): JSX.Element[] {
     return links.map(link => (
       <a href={link.to} key={link.to}>
-        <Button>
+        <Button className={this.props.classes.button}>
           {link.label}
         </Button>
       </a>

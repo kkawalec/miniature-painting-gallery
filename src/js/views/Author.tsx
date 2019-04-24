@@ -6,7 +6,7 @@ import React from 'react';
 import { Translate } from 'react-redux-i18n';
 import ScrollableAnchor from 'react-scrollable-anchor';
 
-const img1 = require('../../images/header-image.jpg');
+const img1 = require('../../images/KarolinaModes.jpg');
 
 const styles = {
   avatar: {

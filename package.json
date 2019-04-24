@@ -7,7 +7,7 @@
     "start": "node dev/server",
     "test": "jest",
     "build": "npx webpack --config webpack.config.prod.js --progress --color",
-    "deploy": "surge ./dist miniatures.aedlabs.pl"
+    "deploy": "rm -rf ./dist && npm run build && surge ./dist miniatures.aedlabs.pl"
   },
   "repository": {
     "type": "git",

@@ -13,7 +13,7 @@ export default {
     author: {
       label: 'Author',
       name: 'Karolina Modes',
-      content: 'Anything about me..... ',
+      content: 'Painting miniatures is her passion. For several years she gave colors to many armies for battle games, such as Warhammer 40K or Malifaux, as well as scenery. Her first army was the Tyranids, in blue and purple colors. She likes painting characters and monsters with wings the most. She works professionally as a programmer.',
     },
     gallery: {
       label: 'Gallery',
@@ -24,12 +24,14 @@ export default {
           '40K': 'Warhammer 40K',
           Necromunda: 'Necromunda',
           Malifaux: 'Malifaux',
+          TTG2: 'Raging Heroes',
         },
         paintingTypes: {
           label: 'Painting type',
           basic: 'Basic',
           standard: 'Standard',
           pro: 'Professional',
+          mix: 'Mixed',
         },
       },
     },
@@ -128,7 +130,7 @@ export default {
     author: {
       label: 'Autor',
       name: 'Karolina Modes',
-      content: 'Coś tam o mnie.... ',
+      content: 'Malowanie figurek to jej pasja. Przez kilka lat nadała kolory wielu armiom do gier bitewnych, takich jak Warhammer 40K czy Malifaux, a także scenerii. Jej pierwszą armią byli Tyranidzi, w niebiesko-fioletowych kolorach. Najbardziej lubi malować postacie i potwory ze skrzydłami. Pracuje zawodowo jako programistka.',
     },
     gallery: {
       label: 'Galeria',
@@ -139,12 +141,14 @@ export default {
           '40K': 'Warhammer 40K',
           Necromunda: 'Necromunda',
           Malifaux: 'Malifaux',
+          TTG2: 'Raging Heroes',
         },
         paintingTypes: {
           label: 'Poziom malowania',
           basic: 'Podstawowe',
           standard: 'Standardowe',
           pro: 'Profesjonalne',
+          mix: 'Mieszane',
         },
       },
     },

@@ -8,37 +8,10 @@ import ScrollableAnchor from 'react-scrollable-anchor';
 
 import GalleryFilter, { IFilter } from 'views/components/GalleryFilter';
 import GalleryGridList, { IGalleryTile } from 'views/components/GalleryGridList';
+import tileData from 'views/data/photos';
 
-const img1 = require('../../images/header-image.jpg');
-const img2 = require('../../images/en.png');
-const img3 = require('../../images/pl.png');
-
-const tileData: IGalleryTile[] = [
-  {
-    img: img1,
-    title: 'Img1',
-    featured: true,
-    game: 'AOS',
-    paintingType: 'basic',
-  },
-  {
-    img: img2,
-    title: 'Img2',
-    featured: false,
-    game: 'AOS',
-    paintingType: 'standard',
-  },
-  {
-    img: img3,
-    title: 'Image3',
-    featured: false,
-    game: 'Malifaux',
-    paintingType: 'pro',
-  },
-];
-
-const games = ['AOS', '40K', 'Necromunda', 'Malifaux'];
-const paintingTypes = ['basic', 'standard', 'pro'];
+const games = ['AOS', '40K', 'Necromunda', 'Malifaux', 'TTG2'];
+const paintingTypes = ['basic', 'standard', 'pro', 'mix'];
 
 const styles = createStyles({
   filters: {

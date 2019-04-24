@@ -1,11 +1,11 @@
+import Chip from '@material-ui/core/Chip';
 import Fab from '@material-ui/core/Fab';
-import { createStyles, withStyles, Theme } from '@material-ui/core/styles';
+import { createStyles, Theme, withStyles } from '@material-ui/core/styles';
 import axios from 'axios';
 import { Field, FieldProps, Form, Formik, FormikActions } from 'formik';
 import React, { Component } from 'react';
-import { Translate, I18n } from 'react-redux-i18n';
+import { I18n, Translate } from 'react-redux-i18n';
 import * as Yup from 'yup';
-import Chip from '@material-ui/core/Chip';
 
 import MuiCheckboxField from 'components/form/MuiCheckboxField';
 import MuiTextField from 'components/form/MuiTextField';

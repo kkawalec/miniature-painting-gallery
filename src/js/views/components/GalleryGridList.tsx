@@ -27,9 +27,10 @@ const styles = (theme: Theme) => createStyles({
 export interface IGalleryTile {
   img: string;
   title: string;
-  featured: boolean;
-  game: string;
-  paintingType: string;
+  rows: number;
+  cols: number;
+  game: 'AOS' |'40K' | 'Necromunda' | 'Malifaux' | 'TTG2';
+  paintingType: 'basic' | 'standard' | 'pro' | 'mix';
 }
 
 interface IGalleryGridListProps {
@@ -48,7 +49,7 @@ function GalleryGridList(props: IGalleryGridListProps) {
     <div className={classes.root}>
       <GridList cellHeight={200} spacing={1} className={classes.gridList}>
         {tileData.map((tile: IGalleryTile) => (
-          <GridListTile key={tile.img} cols={tile.featured ? 2 : 1} rows={tile.featured ? 2 : 1}>
+          <GridListTile key={tile.img} cols={tile.cols} rows={tile.rows}>
             <img src={tile.img} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
